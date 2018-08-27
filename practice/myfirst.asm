@@ -1,6 +1,6 @@
 SECTION .data
 
-msg: db "hello xiaozi!", 0x0a
+msg: db "hello world", 0x0a
 len: equ $-msg
 
 SECTION .text
