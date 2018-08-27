@@ -1,11 +1,22 @@
-global main
-main:
-mov eax,4
-mov ebx,1
-mov ecx,msge
-mov edx,14
-int 80h
-mov eax,1
-int 80h
-msge:
-db "Hello world!",0ah,0dh
+SECTION .data
+
+msg: db "hello xiaozi!", 0x0a
+len: equ $-msg
+
+SECTION .text
+global _main
+
+kernel:
+    syscall
+    ret
+
+_main:
+    mov rax,0x2000004
+    mov rdi,1
+    mov rsi,msg
+    mov rdx,len
+    call kernel
+
+    mov rax,0x2000001
+    mov rdi,0
+    call kernel
