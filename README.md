@@ -1,7 +1,7 @@
 # Assembly_language
 My Assembly Language Learning
 
-# Compile 
+# Compiler 
 [Nasm](https://www.nasm.us/)
 
 # Steps
