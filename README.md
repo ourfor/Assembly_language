@@ -27,7 +27,7 @@ brew install nasm
 
 ```bash
 nasm -f macho64 -o file_name.o file_name.asm
-ld -o file_name -e _main file_name.o
+ld file_name.o -o file_name -macosx_version_min 10.13 -lSystem
 ./file_name
 ```
 ![Compile](source/screenshot/compile.png)
